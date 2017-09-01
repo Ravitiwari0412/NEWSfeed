@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.codingblocks.newsfeed.ArticleActivity">
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="match_parent"
+        android:textSize="20sp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="12dp"
+        android:gravity="center"
+        android:text="Title" />
+
+    <ImageView
+        android:id="@+id/ivphoto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvTitle"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="24dp"
+        app:srcCompat="@android:drawable/ic_menu_report_image" />
+
+    <TextView
+        android:id="@+id/tvTime"
+        android:textSize="15sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ivphoto"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="29dp"
+        android:text="17-08-2017: 12;23;34"
+        android:gravity="center"/>
+
+    <TextView
+        android:id="@+id/tvdescp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvTime"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="42dp"
+
+        android:text="Description" />
+
+    <TextView
+        android:id="@+id/tvURL"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvdescp"
+        android:layout_marginTop="47dp"
+        android:textColor="@color/colorPrimary"
+        android:text="URL"
+        android:textSize="10dp"
+        android:layout_alignLeft="@+id/ivphoto"
+        android:layout_alignStart="@+id/ivphoto" />
+</RelativeLayout>
