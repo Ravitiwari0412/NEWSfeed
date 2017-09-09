@@ -2,13 +2,17 @@ package com.codingblocks.newsfeed;
 
 import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
+
+import java.net.URL;
 
 import Models.Article;
 
@@ -31,7 +35,7 @@ public class ArticleActivity extends AppCompatActivity {
         article=getIntent().getExtras().getParcelable(TAG);
       //  Log.d(TAG, article.getTitle());
     //  getIntent().getStringExtra("author");
-        title=(TextView)findViewById(R.id.tvfirstTitle);
+        title=(TextView)findViewById(R.id.tvTitle);
         time=(TextView)findViewById(R.id.tvTime);
         img=(ImageView)findViewById(R.id.ivphoto);
         description=(TextView)findViewById(R.id.tvdescp);
@@ -46,6 +50,16 @@ public class ArticleActivity extends AppCompatActivity {
         Picasso.with(context).load(article.getUrlToImage()).into(img);
         description.setText(article.getDescription());
         URL.setText(article.getUrl());
+        URL.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent();
+                i.setAction(Intent.ACTION_VIEW);
+               Log.e("aaa",article.getUrl());
+                i.setData(Uri.parse(article.getUrl()));
+                startActivity(i);
+            }
+        });
 
     }
 }
