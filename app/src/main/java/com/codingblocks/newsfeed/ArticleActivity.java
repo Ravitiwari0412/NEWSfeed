@@ -31,7 +31,7 @@ public class ArticleActivity extends AppCompatActivity {
         article=getIntent().getExtras().getParcelable(TAG);
       //  Log.d(TAG, article.getTitle());
     //  getIntent().getStringExtra("author");
-        title=(TextView)findViewById(R.id.tvfirstTitle);
+        title=(TextView)findViewById(R.id.tvTitle);
         time=(TextView)findViewById(R.id.tvTime);
         img=(ImageView)findViewById(R.id.ivphoto);
         description=(TextView)findViewById(R.id.tvdescp);
